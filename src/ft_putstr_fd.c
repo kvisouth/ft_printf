@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 14:59:42 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/02 16:53:24 by kvisouth         ###   ########.fr       */
+/*   Created: 2022/11/14 19:49:18 by kvisouth          #+#    #+#             */
+/*   Updated: 2022/11/23 13:45:21 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_printf(char *str, ... )
+#include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
-	
-	while (str[i])
+
+	i = 0;
+	if (s != NULL)
 	{
-		if (str[i] == '%')
-			
+		while (s[i])
+		{
+			write (fd, &s[i], 1);
+			i++;
+		}
 	}
 }

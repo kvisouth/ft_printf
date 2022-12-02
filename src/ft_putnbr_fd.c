@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 14:59:42 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/02 16:53:24 by kvisouth         ###   ########.fr       */
+/*   Created: 2022/11/14 22:43:11 by nok               #+#    #+#             */
+/*   Updated: 2022/11/23 13:45:21 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_printf(char *str, ... )
+#include "libft.h"
+
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-	
-	while (str[i])
+	if (n == -2147483648)
+		ft_putstr_fd ("-2147483648", fd);
+	else if (n >= 0 && n < 10)
+		ft_putchar_fd (n + '0', fd);
+	else if (n < 0)
 	{
-		if (str[i] == '%')
-			
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(n * (-1), fd);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
 }
