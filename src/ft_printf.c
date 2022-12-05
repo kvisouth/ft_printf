@@ -6,35 +6,47 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 14:59:42 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/05 16:22:01 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/05 19:19:33 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_parse(const char letter)
+/*
+	Will do the right conversion depending the letter which is already legal
+	thamks to is_valid, sending the argument to print to the corresponding
+	function.
+*/
+
+static int	ft_convert(const char letter, va_list args)
 {
+	int	count;
+
+	count = 0;
 	if (letter == 'c')
-		ft_percent_c();
+		c += ft_putchar(va_arg(args, int));
 	else if (letter == 's')
-		ft_percent_s();
+		c += ft_putstr(va_arg(args, char *))
 	else if (letter == 'p')
 		ft_percent_p();
-	else if (letter == 'd')
-		ft_percent_id();
-	else if (letter == 'i')
-		ft_percent_id();
+	else if (letter == 'd' || letter == 'i')
+		c += ft_putnbr(va_arg(args, int));
 	else if (letter == 'u')
-		ft_percent_u();
+		c += ft_putnbr(va_arg(args, unsigned int));
 	else if (letter == 'x')
 		ft_percent_x();
 	else if (letter == 'X')
 		ft_percent_X();
 	else if (letter == '%')
-		ft_putchar_fd(letter, 1);
+		ft_putchar(letter, 1);
 }
 
-int	check_legal(const char letter)
+/*
+	Will check if the letter after the '%' is legal. (if it's matching the
+	letters corresponding to the conversions)
+*/
+
+int	is_valid(const char letter)
 {
 	if (letter == 'c' || letter == 's' || letter == 'p' || letter == 'd'
 		|| letter == 'i' || letter == 'u' || letter == 'x' || letter == 'X'
@@ -45,21 +57,35 @@ int	check_legal(const char letter)
 
 int	ft_printf(const char *format, ...)
 {
-	int			i;
+	int			index;
+	int			count;
 	va_list		args;
 
 	va_start (args, format);
-	i = 0;
-	while (format[i])
+	count = 0;
+	index = 0;
+	while (format[index])
 	{
-		if (format[i] == '%')
+		if (format[index] == '%')
 		{
-			if (check_legal(format[i + 1]) == 0)
-				return (NULL);
+			if (is_valid(format[index + 1]) == 0)
+				return (0);
 			else
-			
+			{
+				count = ft_convert(format[index + 1], args);
+				index++;
+				count++;
+			}
 		}
+		else
+		{
+			count = ft_putchar(format[index])
+			count++;
+		}
+		index++;
 	}
+	va_end args;
+	return (count);
 }
 
 //printf("bonjour je suis %s jai %d ans jhabite dans le %s", prenom, age, ville)
