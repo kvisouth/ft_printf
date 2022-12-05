@@ -6,7 +6,7 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 14:59:42 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/05 19:19:33 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/05 20:11:50 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static int	ft_convert(const char letter, va_list args)
 	else if (letter == 'u')
 		c += ft_putnbr(va_arg(args, unsigned int));
 	else if (letter == 'x')
-		ft_percent_x();
+		
 	else if (letter == 'X')
-		ft_percent_X();
+		
 	else if (letter == '%')
 		ft_putchar(letter, 1);
 }
@@ -72,19 +72,15 @@ int	ft_printf(const char *format, ...)
 				return (0);
 			else
 			{
-				count = ft_convert(format[index + 1], args);
+				count += ft_convert(format[index + 1], args);
 				index++;
-				count++;
 			}
 		}
 		else
-		{
-			count = ft_putchar(format[index])
-			count++;
-		}
+			count += ft_putchar(format[index]);
 		index++;
 	}
-	va_end args;
+	va_end(args);
 	return (count);
 }
 
