@@ -6,7 +6,7 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:49:18 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/05 19:29:55 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/05 20:17:46 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,9 @@ int	ft_putstr(char *s)
 	}
 	return (i);
 }
+
+// int main(void)
+// {
+// 	char *s = "abc";
+// 	printf("\n%d",ft_putstr(s));
+// }
