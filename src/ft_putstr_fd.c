@@ -6,11 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:49:18 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/11/23 13:45:21 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:08:53 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

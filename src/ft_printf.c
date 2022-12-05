@@ -6,17 +6,22 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 14:59:42 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/02 16:53:24 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:08:30 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_printf(char *str, ... )
+#include "ft_printf.h"
+
+int ft_printf(char *str, ...)
 {
 	int	i;
-	
+
+	i = 0;
 	while (str[i])
 	{
 		if (str[i] == '%')
-			
+		{
+			checkarg = 
+		}
 	}
 }

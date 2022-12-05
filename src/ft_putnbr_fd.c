@@ -6,11 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 22:43:11 by nok               #+#    #+#             */
-/*   Updated: 2022/11/23 13:45:21 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:08:50 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
