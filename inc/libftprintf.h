@@ -6,7 +6,7 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:13:09 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/06 16:22:26 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/06 19:55:49 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 
 int	ft_putstr(char *s);
 int	ft_putnbr(long int nb);
-int	ft_puthexa(int n, char caps);
+int	ft_puthexa(unsigned long nbr, char caps);
 int	ft_putchar(char c);
+size_t	ft_strlen(const char *s);
 
 #endif
