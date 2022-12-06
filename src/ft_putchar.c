@@ -6,11 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:42:52 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/05 19:23:43 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:22:47 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../inc/ft_printf.h"
 
 int	ft_putchar(char c)
 {

@@ -6,37 +6,42 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 22:43:11 by nok               #+#    #+#             */
-/*   Updated: 2022/12/05 19:30:02 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:22:52 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../inc/ft_printf.h"
 
-int	ft_putnbr(int n)
+int	ft_putchar(char c)
 {
-	int	count;
+	write(1, &c, 1);
+	return (1);
+}
 
-	count = 0;
-	if (n == -2147483648)
+
+int	ft_putnbr(long int nb)
+{
+	int	a;
+
+	a = 1;
+	if (nb < 0)
 	{
-		ft_putstr ("-2147483648");
-		return (11);
-	}
-	else if (n >= 0 && n < 10)
-	{
-		ft_putchar (n + '0');
-		count++;
-	}
-	else if (n < 0)
-	{
+		a = -1;
 		ft_putchar('-');
-		count++;
-		ft_putnbr(n * (-1));
+		nb *= -1;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
 	else
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
-	return (count);
+		ft_putchar(nb + 48);
+	return (nb * a);
 }
+
+// int main (int ac, char **av)
+// {
+// 	(void)ac;
+// 	printf("\nNB : %d",ft_putnbr(atoi(av[1])));
+// }

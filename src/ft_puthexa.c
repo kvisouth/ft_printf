@@ -6,11 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:39:17 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/05 19:52:31 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:22:49 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../inc/ft_printf.h"
 
 int ft_puthexa(int n, char caps)
 {
