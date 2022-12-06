@@ -6,13 +6,13 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 22:43:11 by nok               #+#    #+#             */
-/*   Updated: 2022/12/06 16:34:49 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:08:39 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libftprintf.h"
 
-int	ft_putnbr(long int nb)
+static int	ft_putnbr_write(long int nb)
 {
 	int	a;
 
@@ -33,8 +33,24 @@ int	ft_putnbr(long int nb)
 	return (nb * a);
 }
 
-int main (int ac, char **av)
+int	ft_putnbr(long int nb)
 {
-	(void)ac;
-	printf("\nNB : %d",ft_putnbr(atoi(av[1])));
+	int	count;
+	
+	nb = ft_putnbr_write(nb);
+	count = 0;
+	if (nb < 0)
+		count++;
+	while (nb != 0)
+	{
+		nb = nb / 10;
+		count++;
+	}
+	return (count);
 }
+
+// int main (int ac, char **av)
+// {
+// 	(void)ac;
+// 	printf("\nNB : %d",ft_putnbr(atoi(av[1])));
+// }
