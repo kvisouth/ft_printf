@@ -6,11 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 14:59:42 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/06 16:22:44 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:34:00 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/libftprintf.h"
 
 /*
 	Will do the right conversion depending the letter which is already legal
