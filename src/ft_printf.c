@@ -6,17 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 14:59:42 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/07 13:15:01 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:58:34 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
-
-/*
-	Will do the right conversion depending the letter which is already legal
-	thamks to is_valid, sending the argument to print to the corresponding
-	function.
-*/
 
 static int	ft_convert(const char letter, va_list args)
 {
@@ -28,10 +22,7 @@ static int	ft_convert(const char letter, va_list args)
 	else if (letter == 's')
 		count += ft_putstr(va_arg(args, char *));
 	else if (letter == 'p')
-	{
-		count += ft_putstr("0x");
-		count += ft_puthex(va_arg(args, unsigned long), 'x');
-	}
+		count += ft_putptr(va_arg(args, unsigned long));
 	else if (letter == 'd' || letter == 'i')
 		count += ft_putnbr(va_arg(args, int));
 	else if (letter == 'u')
@@ -41,22 +32,8 @@ static int	ft_convert(const char letter, va_list args)
 	else if (letter == 'X')
 		count += ft_puthex(va_arg(args, unsigned int), 'X');
 	else if (letter == '%')
-		ft_putchar(letter);
+		count += ft_putchar(letter);
 	return (count);
-}
-
-/*
-	Will check if the letter after the '%' is legal. (if it's matching the
-	letters corresponding to the conversions)
-*/
-
-static int	is_valid(const char letter)
-{
-	if (letter == 'c' || letter == 's' || letter == 'p' || letter == 'd'
-		|| letter == 'i' || letter == 'u' || letter == 'x' || letter == 'X'
-		|| letter == '%')
-		return (1);
-	return (0);
 }
 
 int	ft_printf(const char *format, ...)
@@ -72,13 +49,8 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
-			if (is_valid(format[index + 1]) == 0)
-				return (0);
-			else
-			{
-				count += ft_convert(format[index + 1], args);
-				index++;
-			}
+			count += ft_convert(format[index + 1], args);
+			index++;
 		}
 		else
 			count += ft_putchar(format[index]);
@@ -87,3 +59,11 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+
+// #include <limits.h>
+// int main (void)
+// {
+// 	ft_printf("%s", NULL);
+// 	// printf("%s","\n\n");
+// 	printf("%s", null_str);
+// }	
