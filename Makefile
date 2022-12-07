@@ -19,6 +19,6 @@ clean:
 	$(RM) obj
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) src/./a.out
 
 re: fclean all
