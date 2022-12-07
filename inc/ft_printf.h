@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:13:09 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/07 13:09:37 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:16:21 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int		ft_puthex(unsigned long nbr, char caps);
 int		ft_putchar(char c);
 size_t	ft_strlen(const char *s);
 char	*ft_strrev(char *str);
+int	ft_printf(const char *format, ...);
 
 #endif
