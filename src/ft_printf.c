@@ -6,11 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 14:59:42 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/07 13:09:03 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:15:01 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libftprintf.h"
+#include "../inc/ft_printf.h"
 
 /*
 	Will do the right conversion depending the letter which is already legal
@@ -50,7 +50,7 @@ static int	ft_convert(const char letter, va_list args)
 	letters corresponding to the conversions)
 */
 
-int	is_valid(const char letter)
+static int	is_valid(const char letter)
 {
 	if (letter == 'c' || letter == 's' || letter == 'p' || letter == 'd'
 		|| letter == 'i' || letter == 'u' || letter == 'x' || letter == 'X'

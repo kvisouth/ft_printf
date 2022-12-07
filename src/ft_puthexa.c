@@ -6,11 +6,11 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:39:17 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/07 12:34:49 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:14:07 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libftprintf.h"
+#include "../inc/ft_printf.h"
 
 int	ft_puthex(unsigned long nbr, char caps)
 {
