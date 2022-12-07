@@ -6,7 +6,7 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 14:59:42 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/06 16:34:57 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:09:03 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,25 @@ static int	ft_convert(const char letter, va_list args)
 
 	count = 0;
 	if (letter == 'c')
-		c += ft_putchar(va_arg(args, int));
+		count += ft_putchar(va_arg(args, int));
 	else if (letter == 's')
-		c += ft_putstr(va_arg(args, char *))
+		count += ft_putstr(va_arg(args, char *));
 	else if (letter == 'p')
-		ft_percent_p();
+	{
+		count += ft_putstr("0x");
+		count += ft_puthex(va_arg(args, unsigned long), 'x');
+	}
 	else if (letter == 'd' || letter == 'i')
-		c += ft_putnbr(va_arg(args, int));
+		count += ft_putnbr(va_arg(args, int));
 	else if (letter == 'u')
-		c += ft_putnbr(va_arg(args, unsigned int));
+		count += ft_putnbr(va_arg(args, unsigned int));
 	else if (letter == 'x')
-		
+		count += ft_puthex(va_arg(args, unsigned int), 'x');
 	else if (letter == 'X')
-		
+		count += ft_puthex(va_arg(args, unsigned int), 'X');
 	else if (letter == '%')
-		ft_putchar(letter, 1);
+		ft_putchar(letter);
+	return (count);
 }
 
 /*
@@ -83,5 +87,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-//printf("bonjour je suis %s jai %d ans jhabite dans le %s", prenom, age, ville)
