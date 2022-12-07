@@ -6,11 +6,16 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 14:59:42 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/07 14:58:34 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/07 16:45:12 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
+
+/*
+	This function will send our va_arg to the correct function to write it.
+	It is handling cspduixX%. Then count the length of what it wrote.
+*/
 
 static int	ft_convert(const char letter, va_list args)
 {
@@ -36,6 +41,19 @@ static int	ft_convert(const char letter, va_list args)
 	return (count);
 }
 
+/*
+	va_list is the type of the variable named args.
+	Meaning there will be variable number of args. Can be 1, or 5, or 100..
+	args is matching with the (...) in the prototype.
+
+	va_start is used to initialize our va_list.
+	He will store our args.
+
+	Then we will simply compare every letter in *format.
+	When we see a '%', we will look at the next letter, then try to match
+	it with the function above to write things or not.
+*/
+
 int	ft_printf(const char *format, ...)
 {
 	int			index;
@@ -59,11 +77,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-// #include <limits.h>
-// int main (void)
-// {
-// 	ft_printf("%s", NULL);
-// 	// printf("%s","\n\n");
-// 	printf("%s", null_str);
-// }	
