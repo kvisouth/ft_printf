@@ -7,7 +7,7 @@ RM	 = rm -rf
 AR	 = ar rcs
 
 $(NAME): $(OBJS)
-	$(AR) $@ $<
+	$(AR) $@ $^
 
 all: $(NAME)
 
