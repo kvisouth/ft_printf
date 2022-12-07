@@ -6,7 +6,7 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:49:18 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/07 13:14:08 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:58:14 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ int	ft_putstr(char *s)
 			write (1, &s[i], 1);
 			i++;
 		}
+		return (i);
 	}
-	return (i);
+	return (ft_putstr("(null)"));
 }
 
 // int main(void)
