@@ -6,12 +6,12 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:13:09 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/07 13:16:21 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/07 15:04:31 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stddef.h>
 # include <stdlib.h>
@@ -22,11 +22,12 @@
 # include <stdarg.h>
 
 int		ft_putstr(char *s);
+int		ft_putptr(unsigned long ptr);
 int		ft_putnbr(long int nb);
 int		ft_puthex(unsigned long nbr, char caps);
 int		ft_putchar(char c);
 size_t	ft_strlen(const char *s);
 char	*ft_strrev(char *str);
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
 
 #endif
