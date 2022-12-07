@@ -6,7 +6,7 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 16:13:09 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/06 19:55:49 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:09:37 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@
 # include <stdint.h>
 # include <stdarg.h>
 
-int	ft_putstr(char *s);
-int	ft_putnbr(long int nb);
-int	ft_puthexa(unsigned long nbr, char caps);
-int	ft_putchar(char c);
+int		ft_putstr(char *s);
+int		ft_putnbr(long int nb);
+int		ft_puthex(unsigned long nbr, char caps);
+int		ft_putchar(char c);
 size_t	ft_strlen(const char *s);
+char	*ft_strrev(char *str);
 
 #endif
