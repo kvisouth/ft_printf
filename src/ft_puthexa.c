@@ -6,11 +6,17 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:39:17 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/07 13:14:07 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/07 16:23:00 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
+
+/*
+	It convert our nbr (decimal) into a hex, writing it.
+	The last line is writing numbers superior to 10, which are
+	ABCDEF in hex. And it's turning the letter into caps or not.
+*/
 
 int	ft_puthex(unsigned long nbr, char caps)
 {
