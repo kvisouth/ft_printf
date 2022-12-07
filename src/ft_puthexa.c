@@ -6,28 +6,28 @@
 /*   By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:39:17 by kvisouth          #+#    #+#             */
-/*   Updated: 2022/12/07 11:57:19 by kvisouth         ###   ########.fr       */
+/*   Updated: 2022/12/07 12:34:49 by kvisouth         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libftprintf.h"
 
-int	ft_puthex(unsigned long nbr, char bs)
+int	ft_puthex(unsigned long nbr, char caps)
 {
 	int	len;
 
 	len = 0;
 	if (nbr >= 16)
 	{
-		len += ft_puthex((nbr / 16), bs);
-		len += ft_puthex((nbr % 16), bs);
+		len += ft_puthex((nbr / 16), caps);
+		len += ft_puthex((nbr % 16), caps);
 	}
 	else
 	{
 		if (nbr < 10)
 			len += ft_putnbr(nbr);
 		else
-			len += ft_putchar(nbr - 10 + 'a' + bs - 'x');
+			len += ft_putchar(nbr - 10 + 'a' + caps - 'x');
 	}
 	return (len);
 }
