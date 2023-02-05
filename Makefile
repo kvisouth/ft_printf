@@ -6,14 +6,14 @@
 #    By: kvisouth <kvisouth@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 16:49:23 by kvisouth          #+#    #+#              #
-#    Updated: 2022/12/07 16:49:25 by kvisouth         ###   ########.fr        #
+#    Updated: 2023/02/05 22:47:02 by kvisouth         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = $(wildcard src/*.c)
-OBJS = $(SRCS:src/%.c=obj/%.o)
+SRCS = $(wildcard *.c)
+OBJS = $(SRCS:%.c=%.o)
 NAME = libftprintf.a
 RM	 = rm -rf
 AR	 = ar rcs
@@ -23,14 +23,13 @@ $(NAME): $(OBJS)
 
 all: $(NAME)
 
-obj/%.o: src/%.c
-	@mkdir -p obj
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) obj
+	$(RM) *.o
 
 fclean: clean
-	$(RM) $(NAME) src/./a.out
+	$(RM) $(NAME)
 
 re: fclean all
